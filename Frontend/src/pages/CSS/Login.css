@@ -1,0 +1,61 @@
+.login{
+    border: 1px gray solid;
+    width:25%;
+    margin: 5% auto;
+    box-shadow: 0px 4px 20px rgb(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 30px 15px 30px 15px;
+}
+
+.login-heading{
+    color: rgb(28, 221, 28);
+    text-align: center;
+}
+
+.login input,button{
+    height: 35px;
+    border-radius: 12px;
+    border: 1px solid gray;
+    padding: 0px 10px;
+}
+
+.login button{
+    width: 20%;
+    margin-left: 40%;
+    cursor: pointer;
+}
+
+.login label{
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(28, 221, 28);
+    margin-top: 10px;
+}
+
+.login button{
+    font-weight: bold;
+    font-size: 16px;
+    padding: 3px;
+    width: 80px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    background-color: rgb(35, 241, 35);
+}
+
+.login button:hover{
+    background-color: white;
+    border: 1px solid rgb(35, 241, 35);
+    color: rgb(10, 181, 10);
+}
+
+.login p{
+    text-align: center;
+    margin-top: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Login-Route{
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(28, 221, 28);
+}

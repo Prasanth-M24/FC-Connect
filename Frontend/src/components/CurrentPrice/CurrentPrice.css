@@ -1,0 +1,95 @@
+.price-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+.filter-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0; /* Sticks to top of the viewport */
+  background: white; /* Avoid transparency issues */
+  z-index: 20; /* Keep above table */
+  padding: 10px 0;
+}
+
+.filter-container select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.prices-info{
+  display: flex;
+  flex: 1;
+  /* justify-content: space-around; */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 50px ;
+
+}.total-product ,.updated-date-info{
+  font-family:'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.price-table thead {
+  background: linear-gradient(45deg, #23F123, #1abc9c);
+  color: white;
+}
+
+.price-table thead{
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  z-index: 20;
+}
+.price-table th,
+.price-table td {
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.price-table tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.price-table tbody tr:hover {
+  background-color: #eaeaea;
+}
+
+.commodity {
+  color: #000000;
+  cursor: pointer;
+}
+.price-table thead th {
+  padding: 15px 15px; /* Increased vertical padding */
+  font-size: 15px;
+}
+.price-table thead th {
+  padding: 20px 15px; /* Taller header */
+  font-size: 15px;
+}
+.price-table th,
+.price-table td {
+  padding: 20px; /* Same padding for header and data cells */
+  text-align: left; /* Or center, depending on your design */
+  vertical-align: middle; /* Keeps text vertically centered */
+}
+.price-table thead th {
+  padding: 20px 15px; /* Taller header padding */
+  font-weight: bold;
+}
