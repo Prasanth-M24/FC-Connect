@@ -1,15 +1,20 @@
 .formPageContainer {
     display: flex;
-    width: 100%; /* full screen width */
-    height: 100vh; /* optional: full screen height */
-    overflow: hidden; /* avoid scrollbars if image is large */
+    width: 100%;
+    /* full screen width */
+    height: 100vh;
+    /* optional: full screen height */
+    overflow: hidden;
+    /* avoid scrollbars if image is large */
 }
 
 .left-seller-image {
-    flex: 1; /* allow it to take proportional space */
+    flex: 1;
+    /* allow it to take proportional space */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* center vertically */
+    justify-content: center;
+    /* center vertically */
     /* padding-left: 20px; */
 }
 
@@ -17,13 +22,16 @@
     max-width: 80%;
     height: auto;
     margin-left: 6%;
-    object-fit: contain; /* keeps aspect ratio */
+    object-fit: contain;
+    /* keeps aspect ratio */
 }
 
 .right_seller {
-    flex: 1; /* equal width with left image */
+    flex: 1;
+    /* equal width with left image */
     display: flex;
-    align-items: center; /* center form vertically */
+    align-items: center;
+    /* center form vertically */
 }
 
 
@@ -35,26 +43,35 @@
     font-weight: 500;
     padding: 1%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    /* Restrict height to fit in viewport */
+    overflow-y: auto;
+    /* Enable vertical scroll if content overflows */
+    height: auto;
+    /* Allow it to be shorter if content is small */
 }
 
-form{
+form {
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.seller-form h1{
+
+.seller-form h1 {
     align-items: center;
     margin-left: 20%;
     margin-bottom: 5%;
     color: rgb(41, 120, 12);
 }
-.comodityName{
+
+.comodityName {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.comodityName input{
+
+.comodityName input {
     width: 98%;
     outline: none;
     font-size: 15px;
@@ -63,78 +80,89 @@ form{
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.quantity-unit{
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(200px, 1fr));
-    gap: 20px;
-}
-.quantity{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.quantity input{
-    padding: 5px;
-    outline: none;
-    font-size: 15px;    
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.unit{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 
-.unit select{
-    padding: 5px;
-    outline: none;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.location-detail{
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit , minmax(200px, 1fr));
-    gap: 20px;    
-}
-.state{
-    display: flex;
-    flex-direction: column;
-}
-.state input{
-    padding: 5px;
-    outline: none;
-    font-size: 15px;    
-    border: 1px solid #ccc;
-    border-radius: 5px;    
-}
-
-.district{
-    display: flex;
-    flex-direction: column;
-}
-.district input{
-    padding: 5px;
-    outline: none;
-    font-size: 15px;    
-    border: 1px solid #ccc;
-    border-radius: 5px;    
-}
-.name-phone{
+.quantity-unit {
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
-.name{
+
+.quantity {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.name input{
+
+.quantity input {
+    padding: 5px;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.unit {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.unit select {
+    padding: 5px;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.location-detail {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.state {
+    display: flex;
+    flex-direction: column;
+}
+
+.state input {
+    padding: 5px;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.district {
+    display: flex;
+    flex-direction: column;
+}
+
+.district input {
+    padding: 5px;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.name-phone {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.name input {
     padding: 5px;
     font-size: 15px;
     border: none;
@@ -142,20 +170,23 @@ form{
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-.phone{
+
+.phone {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.phone input{
+
+.phone input {
     padding: 5px;
     font-size: 15px;
     border: none;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #ccc;   
+    border: 1px solid #ccc;
 }
-.form-btn button{
+
+.form-btn button {
     background-color: rgb(68, 255, 0);
     border: transparent solid 2px;
     padding: 10px 15px;
@@ -167,14 +198,16 @@ form{
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
 }
-.form-btn button:hover{
+
+.form-btn button:hover {
     background-color: white;
     border: 2px solid rgb(25, 236, 9);
     color: black;
     transition: 0.3s ease-out;
     cursor: pointer;
 }
-.form-btn{
+
+.form-btn {
     display: flex;
     justify-content: flex-end;
 }

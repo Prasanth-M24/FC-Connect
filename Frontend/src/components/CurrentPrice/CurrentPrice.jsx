@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./CurrentPrice.css";
+
+import { Link } from "react-router-dom";
 
 const CurrentPrice = () => {
   const [prices, setPrices] = useState([]);
@@ -13,6 +15,9 @@ const CurrentPrice = () => {
   const [selectedCommodity, setSelectedCommodity] = useState("");
   const [count, setCount] = useState(null);
   const [date, setDate] = useState(null);
+
+
+
 
   // First fetch to get total count
   useEffect(() => {
@@ -36,14 +41,15 @@ const CurrentPrice = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        setPrices(data.records);
-        setFilteredPrices(data.records);
+        const records = data.records || [];
+        setPrices(records);
+        setFilteredPrices(records);
 
         // Extract unique values
-        setStates([...new Set(data.records.map((item) => item.state))]);
-        setDistricts([...new Set(data.records.map((item) => item.district))]);
+        setStates([...new Set(records.map((item) => item.state))]);
+        setDistricts([...new Set(records.map((item) => item.district))]);
         setCommodities([
-          ...new Set(data.records.map((item) => item.commodity)),
+          ...new Set(records.map((item) => item.commodity)),
         ]);
       })
       .catch((error) => console.error("Error fetching full data:", error));
@@ -127,7 +133,7 @@ const CurrentPrice = () => {
           <p className="total-product">Total no. of Product: {count}</p>
           <p className="updated-date-info">
             Price updated :
-            {" " +
+            {date && !isNaN(Formated.getTime()) ? " " +
               Formated.toLocaleString("en-IN", {
                 day: "2-digit",
                 month: "2-digit",
@@ -136,12 +142,11 @@ const CurrentPrice = () => {
                 minute: "2-digit",
                 second: "2-digit",
                 hour12: true,
-              })}
+              }) : " Loading..."}
           </p>
         </div>
       </div>
 
-      {/* Data Table */}
       <table className="price-table">
         <thead>
           <tr>
