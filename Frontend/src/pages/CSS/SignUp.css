@@ -1,64 +1,76 @@
-.sign-up{
-    border: 1px gray solid;
-    width:25%;
-    margin: 2% auto;
-    box-shadow: 0px 4px 20px rgb(0, 0, 0, 0.3);
-    padding: 20px;
-    border-radius: 30px 15px 30px 15px;
-}
-
-.sign-up-form input,button{
-    height: 35px;
-    border-radius: 12px;
-    border: 1px solid gray;
-    padding: 0px 10px;
-}
-
-.sign-up-form input{
-    font-size: 16px;
-}
-
-.signup-heading{
-    color: rgb(28, 221, 28);
-    text-align: center;
-}
-
-.sign-up-form button{
-    width: 20%;
-    margin-left: 40%;
-    cursor: pointer;
-}
-
-.sign-up-form label{
-    font-weight: bold;
-    font-size: 18px;
-    color: rgb(28, 221, 28);
-    margin-top: 10px;
-}
-
-.sign-up-form button{
-    font-weight: bold;
-    font-size: 16px;
-    padding: 3px;
-    width: 80px;
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: 10px;
-    background-color: rgb(35, 241, 35);
-}
-.sign-up-form button:hover{
+.sign-up {
+    border: 1px solid #eee;
+    width: 90%;
+    max-width: 450px;
+    margin: 30px auto;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 20px;
     background-color: white;
-    border: 1px solid rgb(35, 241, 35);
-    color: rgb(10, 181, 10);
 }
 
-.sign-up-form p{
+.sign-up-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sign-up-form input,
+.sign-up-form select {
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 0 15px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.sign-up-form input:focus,
+.sign-up-form select:focus {
+    border-color: #27ae60;
+}
+
+.signup-heading {
+    color: #27ae60;
     text-align: center;
-    margin-top: 15px;
-    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 25px;
+    font-size: 28px;
 }
 
-.signup-Route{
-    font-weight: bold;
+.sign-up-form label {
+    font-weight: 600;
+    font-size: 16px;
+    color: #444;
+}
+
+.sign-up-form button {
+    height: 45px;
+    border-radius: 25px;
+    border: none;
+    background-color: #27ae60;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.sign-up-form button:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
+}
+
+.sign-up-form p {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.signup-Route {
+    font-weight: 700;
     text-decoration: none;
-    color: rgb(28, 221, 28);
+    color: #27ae60;
 }

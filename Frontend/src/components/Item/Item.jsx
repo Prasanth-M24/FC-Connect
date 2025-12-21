@@ -8,11 +8,14 @@ const Item = (props) => {
     <>
       <div className="item">
         <img src={props.img} alt={props.name} className="product-image" />
-        <p>{props.name}</p>
-        <div className="item-price">₹{props.price} /- Kg</div>
-        <div className="product-location"><img src={location_icon} style={{width: '25px'}} alt="" /> {props.district_name}, {props.state_name}
+        <div className="item-details">
+          <p>{props.name}</p>
+          <div className="item-price">₹{props.price} /- Kg</div>
+          <div className="product-location">
+            <img src={location_icon} style={{width: '20px'}} alt="" /> {props.district_name}, {props.state_name}
+          </div>
+          <p className="farmer-name">Farmer: {props.farmer}</p>
         </div>
-        <p>Farmer Name: {props.farmer}</p>
         <button
           className="call-button"
           onClick={() => {
@@ -22,7 +25,7 @@ const Item = (props) => {
             );
           }}
         >
-          Chat with Buyer
+          Chat on WhatsApp
         </button>
       </div>
     </>

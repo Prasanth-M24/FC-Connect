@@ -1,4 +1,5 @@
 const Price = require('../models/Price');
+const axios = require('axios');
 
 // @desc    Get all prices
 // @route   GET /api/prices
@@ -104,8 +105,30 @@ const deletePrice = async (req, res) => {
     }
 };
 
+// @desc    Get Mandi Prices from Gov API
+// @route   GET /api/prices/mandi
+// @access  Public
+const getMandiPrices = async (req, res) => {
+    try {
+        const { state, district, commodity, limit = 100, offset = 0 } = req.query;
+        let url = `https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=${process.env.GOV_API_KEY}&format=json&limit=${limit}&offset=${offset}`;
+
+        // Add filters if provided
+        if (state) url += `&filters[state]=${encodeURIComponent(state)}`;
+        if (district) url += `&filters[district]=${encodeURIComponent(district)}`;
+        if (commodity) url += `&filters[commodity]=${encodeURIComponent(commodity)}`;
+
+        const response = await axios.get(url);
+        res.status(200).json(response.data);
+    } catch (error) {
+        console.error('Mandi API Error:', error.message);
+        res.status(500).json({ message: 'Error fetching Mandi prices' });
+    }
+};
+
 module.exports = {
     getPrices,
+    getMandiPrices,
     createPrice,
     updatePrice,
     deletePrice

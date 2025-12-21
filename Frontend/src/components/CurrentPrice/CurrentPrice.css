@@ -1,114 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 .price-container {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-h2 {
-  margin-bottom: 15px;
-}
-
-.filter-container {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  position: sticky;
-  top: 0;
-  /* Sticks to top of the viewport */
-  background: white;
-  /* Avoid transparency issues */
-  z-index: 20;
-  /* Keep above table */
-  padding: 10px 0;
-}
-
-.filter-container select {
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.prices-info {
-  display: flex;
-  flex: 1;
-  /* justify-content: space-around; */
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-  gap: 50px;
-
-}
-
-.total-product,
-.updated-date-info {
+  padding: 40px 20px;
   font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
-  font-weight: 600;
+  background-color: #f0f4f8;
+  min-height: 100vh;
 }
 
-.price-table {
-  width: 100%;
-  border-collapse: collapse;
+.price-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.price-header h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.price-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.filter-section {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+}
+
+.search-bar {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+}
+
+.search-bar input {
+  width: 80%;
+  padding: 12px 15px 12px 40px;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+.search-bar::before {
+  content: '🔍';
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #95a5a6;
+  font-size: 1rem;
+}
+
+.filter-dropdowns {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-dropdowns select {
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #444;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.filter-dropdowns select:focus {
+  outline: none;
+  border-color: #27ae60;
+}
+
+.info-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #e8f5e9;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border-left: 5px solid #2ecc71;
+}
+
+.info-banner span {
+  font-weight: 500;
+  color: #2e7d32;
+  font-size: 0.9rem;
+}
+
+/* Card Grid */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.price-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   overflow: hidden;
 }
 
-.price-table thead {
-  background: linear-gradient(45deg, #23F123, #1abc9c);
+.price-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.commodity-badge {
+  background: #27ae60;
   color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-.price-table thead {
-  margin: 0;
-  padding: 0;
-  position: sticky;
-  z-index: 20;
+.arrival-date {
+  font-size: 0.8rem;
+  color: #95a5a6;
 }
 
-.price-table th,
-.price-table td {
-  padding: 10px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+.market-info h4 {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  margin: 0 0 5px 0;
+  font-weight: 600;
 }
 
-.price-table tbody tr:nth-child(even) {
-  background-color: #f8f8f8;
+.location {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.price-table tbody tr:hover {
-  background-color: #eaeaea;
+.location::before {
+  content: '📍';
+  font-size: 0.8rem;
 }
 
-.commodity {
-  color: #000000;
-  cursor: pointer;
+.price-details {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
-.price-table thead th {
-  padding: 15px 15px;
-  /* Increased vertical padding */
-  font-size: 15px;
+.price-item {
+  display: flex;
+  flex-direction: column;
 }
 
-.price-table thead th {
-  padding: 20px 15px;
-  /* Taller header */
-  font-size: 15px;
+.price-label {
+  font-size: 0.7rem;
+  color: #95a5a6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
 }
 
-.price-table th,
-.price-table td {
-  padding: 20px;
-  /* Same padding for header and data cells */
-  text-align: left;
-  /* Or center, depending on your design */
-  vertical-align: middle;
-  /* Keeps text vertically centered */
+.price-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c3e50;
 }
 
-.price-table thead th {
-  padding: 20px 15px;
-  /* Taller header padding */
-  font-weight: bold;
+.modal-price {
+  grid-column: span 2;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-price .price-value {
+  color: #27ae60;
+  font-size: 1.3rem;
+}
+
+/* Loading styles */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #27ae60;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.no-results {
+  text-align: center;
+  padding: 50px;
+  background: white;
+  border-radius: 16px;
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-dropdowns {
+    flex-direction: column;
+  }
 }

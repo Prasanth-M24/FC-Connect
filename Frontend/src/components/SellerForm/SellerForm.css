@@ -1,213 +1,162 @@
 .formPageContainer {
     display: flex;
     width: 100%;
-    /* full screen width */
-    height: 100vh;
-    /* optional: full screen height */
-    overflow: hidden;
-    /* avoid scrollbars if image is large */
+    min-height: 100vh;
+    background-color: #f9f9f9;
 }
 
 .left-seller-image {
     flex: 1;
-    /* allow it to take proportional space */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* center vertically */
-    /* padding-left: 20px; */
+    background-color: #f0f7f0;
 }
 
 .left-seller-image img {
-    max-width: 80%;
+    max-width: 90%;
     height: auto;
-    margin-left: 6%;
+    margin: 0 auto;
     object-fit: contain;
-    /* keeps aspect ratio */
 }
 
 .right_seller {
     flex: 1;
-    /* equal width with left image */
     display: flex;
+    justify-content: center;
     align-items: center;
-    /* center form vertically */
+    padding: 20px;
 }
 
-
 .seller-form {
-    width: 70%;
-    margin: 0 auto;
-    border-radius: 50px 20px;
-    font-size: 18px;
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 16px;
     font-weight: 500;
-    padding: 1%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    max-height: 90vh;
-    /* Restrict height to fit in viewport */
-    overflow-y: auto;
-    /* Enable vertical scroll if content overflows */
-    height: auto;
-    /* Allow it to be shorter if content is small */
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+    .formPageContainer {
+        flex-direction: column;
+    }
+
+    .left-seller-image {
+        display: none;
+        /* Hide image on mobile to save space */
+    }
+
+    .right_seller {
+        padding: 40px 15px;
+    }
+
+    .seller-form {
+        width: 100%;
+        padding: 20px;
+        box-shadow: none;
+    }
 }
 
 form {
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 .seller-form h1 {
-    align-items: center;
-    margin-left: 20%;
-    margin-bottom: 5%;
-    color: rgb(41, 120, 12);
+    text-align: center;
+    margin-bottom: 25px;
+    color: #27ae60;
+    font-size: 24px;
 }
 
 .comodityName {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
-.comodityName input {
-    width: 98%;
+.comodityName label,
+.quantity label,
+.unit label,
+.state label,
+.district label,
+.name label,
+.phone label {
+    font-weight: 600;
+    color: #444;
+}
+
+.comodityName input,
+.quantity input,
+.state input,
+.district input,
+.name input,
+.phone input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
     outline: none;
-    font-size: 15px;
-    padding: 5px;
-    border: none;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    transition: border-color 0.3s;
 }
 
-.quantity-unit {
-    margin-top: 20px;
+.comodityName input:focus {
+    border-color: #27ae60;
+}
+
+.quantity-unit,
+.location-detail,
+.name-phone {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-.quantity {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+@media (max-width: 480px) {
 
-.quantity input {
-    padding: 5px;
-    outline: none;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.unit {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    .quantity-unit,
+    .location-detail,
+    .name-phone {
+        grid-template-columns: 1fr;
+    }
 }
 
 .unit select {
-    padding: 5px;
-    outline: none;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.location-detail {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.state {
-    display: flex;
-    flex-direction: column;
-}
-
-.state input {
-    padding: 5px;
-    outline: none;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.district {
-    display: flex;
-    flex-direction: column;
-}
-
-.district input {
-    padding: 5px;
-    outline: none;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.name-phone {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.name {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.name input {
-    padding: 5px;
-    font-size: 15px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.phone {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.phone input {
-    padding: 5px;
-    font-size: 15px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.form-btn button {
-    background-color: rgb(68, 255, 0);
-    border: transparent solid 2px;
-    padding: 10px 15px;
-    color: black;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    transition: 0.3s ease-in;
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.form-btn button:hover {
-    background-color: white;
-    border: 2px solid rgb(25, 236, 9);
-    color: black;
-    transition: 0.3s ease-out;
+    font-size: 14px;
+    box-sizing: border-box;
     cursor: pointer;
 }
 
 .form-btn {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-btn button {
+    background-color: #27ae60;
+    border: none;
+    padding: 12px 40px;
+    color: white;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.form-btn button:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
 }

@@ -13,7 +13,6 @@ const SellerForm = () => {
     district: '',
     sellerName: '',
     phone: '',
-    phone: '',
     price: '',
     image: ''
   });

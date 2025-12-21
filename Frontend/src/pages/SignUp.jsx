@@ -40,7 +40,7 @@ const LoginSignUp = () => {
         <label>Password</label>
         <input type="password" name="password" id="" placeholder='Enter your Password' onChange={handleChange} required/>
         <label>Role</label>
-        <select name="role" onChange={handleChange} style={{padding: '10px', margin: '10px 0'}}>
+        <select name="role" onChange={handleChange}>
             <option value="buyer">Buyer</option>
             <option value="seller">Seller</option>
         </select>
